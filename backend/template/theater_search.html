@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Theater Search</title>
+
+    <link
+        rel="stylesheet"
+        href="/styles/search_style.css"
+    >
+
+</head>
+
+<body>
+
+    <nav>
+
+        <a href="/">Home</a>
+
+    </nav>
+
+    <div class="card">
+
+        <h1>Theater Search</h1>
+
+        <form
+            action="/theater-results"
+            method="get"
+        >
+
+            <input
+                type="text"
+                name="zipcode"
+                placeholder="Enter ZIP Code"
+                required
+            >
+
+            <button type="submit">
+                Search
+            </button>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>

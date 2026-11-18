@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Showtimes</title>
+
+    <link
+        rel="stylesheet"
+        href="/styles/search_style.css"
+    >
+
+</head>
+
+<body>
+
+    <nav>
+
+        <a href="/">Home</a>
+
+        <a href="/theater-search">
+            Theater Search
+        </a>
+
+    </nav>
+
+    <div class="card">
+
+        <h1>Movie Showtimes</h1>
+
+    </div>
+
+    {% for showtime in showtimes %}
+
+    <div class="showtime-card">
+
+        <h3>
+
+            {{ showtime.movie.title }}
+
+        </h3>
+
+        <p>
+
+            <strong>Theater:</strong>
+
+            {{ showtime.cinema.name }}
+
+        </p>
+
+        <p>
+
+            <strong>Time:</strong>
+
+            {{ showtime.startsAt }}
+
+        </p>
+
+    </div>
+
+    {% endfor %}
+
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Theater Results</title>
+
+    <link
+        rel="stylesheet"
+        href="/styles/search_style.css"
+    >
+
+</head>
+
+<body>
+
+    <nav>
+
+        <a href="/">Home</a>
+
+        <a href="/theater-search">
+            Theater Search
+        </a>
+
+    </nav>
+
+    <div class="card">
+
+        <h1>Nearby Theaters</h1>
+
+    </div>
+
+    {% for theater in theaters %}
+
+    <div class="theater-card">
+
+        <h3>
+
+            {{ theater.name }}
+
+        </h3>
+
+        <p>
+
+            {{ theater.address }}
+
+        </p>
+
+        <p>
+
+            {{ theater.city }}
+
+        </p>
+
+    </div>
+
+    {% endfor %}
+
+    <div class="card">
+
+        <a href="/showtimes?zipcode=17701">
+
+            View Showtimes
+
+        </a>
+
+    </div>
+
+</body>
+
+</html>

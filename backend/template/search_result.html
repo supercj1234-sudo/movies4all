@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Movie Results</title>
+
+    <link
+        rel="stylesheet"
+        href="/styles/search_style.css"
+    >
+
+</head>
+
+<body>
+
+    <nav>
+
+        <a href="/">Home</a>
+
+        <a href="/theater-search">
+            Theater Search
+        </a>
+
+    </nav>
+
+    {% if movie %}
+
+    <div class="card">
+
+        {% if movie.poster_path %}
+
+        <img
+            src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}"
+            alt="{{ movie.title }}"
+        >
+
+        {% endif %}
+
+        <h1>{{ movie.title }}</h1>
+
+        <p>
+
+            <strong>Rating:</strong>
+
+            {{ movie.vote_average }}
+
+        </p>
+
+        <p>
+
+            <strong>Release Date:</strong>
+
+            {{ movie.release_date }}
+
+        </p>
+
+        <p>
+
+            {{ movie.overview }}
+
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Available On</h2>
+
+        <ul>
+
+            {% for provider in providers %}
+
+                <li>
+                    {{ provider }}
+                </li>
+
+            {% endfor %}
+
+        </ul>
+
+    </div>
+
+    <div class="card">
+
+        <a href="/theater-search">
+            Find Local Showtimes
+        </a>
+
+    </div>
+
+    {% else %}
+
+    <div class="card">
+
+        <h1>No Movie Found</h1>
+
+        <p>
+            Please try another search.
+        </p>
+
+    </div>
+
+    {% endif %}
+
+</body>
+
+</html>
